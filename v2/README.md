@@ -23,9 +23,15 @@ No diálogo de impressão (Chrome/Safari): activar **“Gráficos de fundo”** 
 
 ## Deploy (GitHub Pages)
 
-1. Push deste diretório para `mateussibila.github.io` (ou repo configurado)
-2. Build: `bundle exec jekyll build`
-3. Publicar `_site/` (branch `gh-pages` ou GitHub Actions)
+Site publicado em: **https://mateussibila.github.io/website-mateus/**
+
+Push para `main` dispara o workflow `.github/workflows/pages.yml` (build Jekyll em `v2/` → GitHub Pages).
+
+**Local** usa `baseurl: ""` · **produção** usa `_config.production.yml` (`baseurl: /website-mateus`).
+
+1. Repo: https://github.com/mateussibila/website-mateus (privado)
+2. Settings → Pages → Source: **GitHub Actions**
+3. Build local: `bundle exec jekyll build --config _config.yml,_config.production.yml` → preview em `v2/_site/`
 
 ## Imagens
 

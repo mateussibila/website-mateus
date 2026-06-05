@@ -33,4 +33,6 @@ Se ainda der erro: para o servidor (`Ctrl+C`), confirma o directório com `pwd` 
 
 ## Deploy
 
-Publicar o conteúdo de `v2/` (build Jekyll → pasta `_site/`) no GitHub Pages ou domínio configurado.
+**GitHub Pages:** https://mateussibila.github.io/website-mateus/
+
+Push para `main` → GitHub Actions faz build Jekyll e publica automaticamente.
