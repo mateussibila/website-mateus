@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mateus Sibila - Data Analyst</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <style>
+          /* ========== VARIÁVEIS DE TEMA ========== */
+          :root {
+              --bg-color: #ffffff;
+              --text-color: #333333;
+              --heading-color: #111827;
+              --link-color: #0366d6;
+              --link-hover: #0255c9;
+              --border-color: #eaecef;
+              --code-bg: #f6f8fa;
+              --card-bg: #f9f9f9;
+              --accent-color: #28a745;
+              --header-bg: #f8f9fa;
+              --btn-bg: #2ea44f;
+              --btn-hover: #2c974b;
+              --toggle-bg: #c1c8d4;
+              --toggle-circle: #fff;
+              --sidebar-width: 280px;
+          }
+
+          [data-theme="dark"] {
+              --bg-color: #0d1117;
+              --text-color: #c9d1d9;
+              --heading-color: #58a6ff;
+              --link-color: #58a6ff;
+              --link-hover: #79c0ff;
+              --border-color: #30363d;
+              --code-bg: #161b22;
+              --card-bg: #161b22;
+              --accent-color: #3fb950;
+              --header-bg: #161b22;
+              --btn-bg: #238636;
+              --btn-hover: #2ea043;
+              --toggle-bg: #454c56;
+              --toggle-circle: #1f6feb;
+          }
+
+          /* ========== RESET & BASE ========== */
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+
+          html {
+              scroll-behavior: smooth;
+          }
+
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+              line-height: 1.6;
+              color: var(--text-color);
+              background-color: var(--bg-color);
+              transition: background-color 0.3s, color 0.3s;
+              display: flex;
+              min-height: 100vh;
+          }
+
+          a {
+              color: var(--link-color);
+              text-decoration: none;
+          }
+          a:hover { color: var(--link-hover); text-decoration: underline; }
+
+          /* ========== SIDEBAR ========== */
+          .sidebar {
+              position: fixed;
+              left: 0;
+              top: 0;
+              width: var(--sidebar-width);
+              height: 100vh;
+              background-color: var(--header-bg);
+              border-right: 1px solid var(--border-color);
+              padding: 2rem 1.5rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              transition: background-color 0.3s;
+              z-index: 1001;
+              overflow-y: auto;
+          }
+
+          .sidebar-profile {
+              margin-bottom: 2rem;
+          }
+
+          .sidebar-profile img {
+              width: 150px;
+              height: 150px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-bottom: 1rem;
+              border: 3px solid var(--border-color);
+          }
+
+          .sidebar-profile h2 {
+              font-size: 1.3rem;
+              color: var(--heading-color);
+              margin-bottom: 0.25rem;
+          }
+
+          .sidebar-profile .title {
+              font-size: 0.95rem;
+              color: var(--text-color);
+              opacity: 0.8;
+              margin-bottom: 0.5rem;
+          }
+
+          .sidebar-links {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 0.75rem;
+          }
+
+          .sidebar-links a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.5rem;
+              padding: 0.6rem 1rem;
+              border-radius: 6px;
+              background-color: var(--card-bg);
+              border: 1px solid var(--border-color);
+              transition: all 0.2s;
+          }
+
+          .sidebar-links a:hover {
+              background-color: var(--link-color);
+              color: white;
+              text-decoration: none;
+          }
+
+          /* ========== MAIN CONTENT ========== */
+          .main-content {
+              margin-left: var(--sidebar-width);
+              flex: 1;
+              width: calc(100% - var(--sidebar-width));
+          }
+
+          /* ========== HEADER & NAV ========== */
+          .top-header {
+              background-color: var(--header-bg);
+              border-bottom: 1px solid var(--border-color);
+              padding: 1rem 0;
+              position: sticky;
+              top: 0;
+              z-index: 1000;
+              transition: background-color 0.3s;
+          }
+
+          .nav-wrapper {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+
+          .logo {
+              font-weight: 700;
+              font-size: 1.2rem;
+              color: var(--heading-color);
+          }
+          .logo:hover { color: var(--link-color); }
+
+          .nav-menu {
+              display: flex;
+              list-style: none;
+              gap: 1.5rem;
+              align-items: center;
+          }
+
+          .nav-menu a {
+              color: var(--text-color);
+              font-weight: 500;
+              text-decoration: none;
+              transition: color 0.2s;
+          }
+          .nav-menu a:hover { color: var(--link-color); }
+
+          .nav-menu .active {
+              color: var(--link-color);
+              border-bottom: 2px solid var(--link-color);
+          }
+
+          /* ========== DARK MODE TOGGLE ========== */
+          .theme-toggle {
+              background: var(--toggle-bg);
+              border: none;
+              border-radius: 20px;
+              padding: 5px 10px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              transition: background 0.3s;
+              margin-left: 10px;
+          }
+          .theme-toggle span {
+              font-size: 1.2rem;
+          }
+          .theme-toggle .sun { display: block; }
+          .theme-toggle .moon { display: none; }
+          [data-theme="dark"] .theme-toggle .sun { display: none; }
+          [data-theme="dark"] .theme-toggle .moon { display: block; }
+
+          /* ========== HERO SECTION ========== */
+          .hero {
+              text-align: center;
+              padding: 4rem 0 3rem;
+          }
+
+          .hero h1 {
+              font-size: 2.5rem;
+              color: var(--heading-color);
+              margin-bottom: 0.5rem;
+          }
+
+          .hero .subtitle {
+              font-size: 1.25rem;
+              color: var(--text-color);
+              opacity: 0.8;
+              margin-bottom: 0.5rem;
+          }
+
+          /* ========== SECTIONS ========== */
+          section {
+              padding: 2rem 0;
+              border-top: 1px solid var(--border-color);
+          }
+
+          .section-title {
+              font-size: 1.5rem;
+              color: var(--heading-color);
+              margin-bottom: 1.5rem;
+              border-bottom: 2px solid var(--link-color);
+              padding-bottom: 0.5rem;
+              display: inline-block;
+          }
+
+          /* ========== ABOUT ========== */
+          .about-content { max-width: 800px; margin: 0 auto; }
+          .about-content p { margin-bottom: 1rem; }
+          .about-content ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+          .about-content li { margin-bottom: 0.5rem; }
+
+          /* ========== BLOG ========== */
+          .blog-placeholder {
+              text-align: center;
+              padding: 3rem 1rem;
+              color: var(--text-color);
+              opacity: 0.7;
+          }
+          .blog-placeholder i {
+              font-size: 3rem;
+              margin-bottom: 1rem;
+              color: var(--accent-color);
+          }
+
+          /* ========== PROJECTS ========== */
+          .projects-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 1.5rem;
+          }
+
+          .project-card {
+              border: 1px solid var(--border-color);
+              border-radius: 8px;
+              padding: 1.5rem;
+              background: var(--card-bg);
+              transition: transform 0.2s, box-shadow 0.2s;
+          }
+
+          .project-card:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          }
+
+          .project-card h3 {
+              color: var(--link-color);
+              margin-bottom: 0.75rem;
+              font-size: 1.1rem;
+          }
+
+          .project-tech {
+              font-size: 0.9rem;
+              color: var(--accent-color);
+              margin: 0.5rem 0;
+          }
+
+          /* ========== EXPERIENCE TIMELINE ========== */
+          .timeline {
+              position: relative;
+              padding-left: 30px;
+              max-width: 800px;
+          }
+
+          .timeline-item {
+              position: relative;
+              margin-bottom: 2rem;
+              padding-left: 20px;
+              border-left: 3px solid var(--link-color);
+          }
+
+          .timeline-item::before {
+              content: '';
+              position: absolute;
+              left: -8px;
+              top: 0;
+              width: 14px;
+              height: 14px;
+              background: var(--link-color);
+              border-radius: 50%;
+              border: 2px solid var(--bg-color);
+          }
+
+          .timeline-item h3 {
+              color: var(--heading-color);
+              margin-bottom: 0.25rem;
+              font-size: 1.1rem;
+          }
+
+          .timeline-date {
+              color: var(--accent-color);
+              font-size: 0.9rem;
+              margin-bottom: 0.5rem;
+              font-weight: 500;
+          }
+
+          .timeline-item ul {
+              margin-left: 1.2rem;
+              margin-top: 0.5rem;
+          }
+
+          .timeline-item li {
+              margin-bottom: 0.4rem;
+          }
+
+          /* ========== CONTACT ========== */
+          .contact-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 1rem;
+              margin: 1.5rem 0;
+          }
+
+          .contact-item {
+              text-align: center;
+              padding: 1rem;
+              border: 1px solid var(--border-color);
+              border-radius: 8px;
+              background: var(--card-bg);
+          }
+
+          .contact-item i {
+              font-size: 1.5rem;
+              color: var(--link-color);
+              margin-bottom: 0.5rem;
+          }
+
+          /* ========== FOOTER ========== */
+          footer {
+              text-align: center;
+              padding: 2rem 0;
+              margin-top: 3rem;
+              border-top: 1px solid var(--border-color);
+              color: var(--text-color);
+              opacity: 0.7;
+              font-size: 0.9rem;
+          }
+
+          /* ========== RESPONSIVE ========== */
+          @media (max-width: 768px) {
+              .sidebar {
+                  position: relative;
+                  width: 100%;
+                  height: auto;
+                  border-right: none;
+                  border-bottom: 1px solid var(--border-color);
+              }
+              .main-content {
+                  margin-left: 0;
+                  width: 100%;
+              }
+              .hero h1 { font-size: 2rem; }
+              .nav-wrapper { flex-direction: column; gap: 1rem; }
+              .nav-menu { gap: 1rem; font-size: 0.9rem; flex-wrap: wrap; justify-content: center; }
+          }
+      </style>
+  </head>
+  <body>
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+          <div class="sidebar-profile">
+              <img src="https://via.placeholder.com/150/0288d1/ffffff?text=MS" alt="Mateus Sibila">
+              <h2>Mateus Sibila</h2>
+              <p class="title">Data Analyst & Engineer</p>
+          </div>
+          <div class="sidebar-links">
+              <a href="mailto:mateussibila@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+              <a href="https://github.com/mateussibila" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://linkedin.com/in/mateussibilaromano" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+          <!-- HEADER -->
+          <header class="top-header">
+              <div class="container nav-wrapper">
+                  <a href="#home" class="logo">Mateus Sibila</a>
+                  <nav>
+                      <ul class="nav-menu">
+                          <li><a href="#about" class="nav-link">About</a></li>
+                          <li><a href="#experience" class="nav-link">Experience</a></li>
+                          <li><a href="#projects" class="nav-link">Projects</a></li>
+                          <li><a href="#blog" class="nav-link">Blog</a></li>
+                          <li><a href="#contact" class="nav-link">Contact</a></li>
+                          <li>
+                              <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                                  <span class="sun">☀️ </span>
+                                  <span class="moon">🌙</span>
+                              </button>
+                          </li>
+                      </ul>
+                  </nav>
+              </div>
+          </header>
+
+          <main class="container">
+              <!-- HERO (HOME) -->
+              <section id="home" class="hero">
+                  <h1>Hi, I'm Mateus Sibila</h1>
+                  <p class="subtitle">Data Analyst & Engineer | Transforming data into insights</p>
+              </section>
+
+          <!-- ABOUT -->
+          <section id="about">
+              <h2 class="section-title">About Me</h2>
+              <div class="about-content">
+                  <p>Data Analyst with a background in mechanical engineering, skilled in data analysis, visualization, statistical modeling, and applying machine learning to generate insights and
+  support decision-making from diverse datasets.</p>
+
+                  <h3>What I Do</h3>
+                  <ul>
+                      <li><strong>Data Analysis:</strong> Transform raw data into actionable insights using Python, SQL, and Power BI</li>
+                      <li><strong>Data Engineering:</strong> Build ETL pipelines, data warehouses, and automated workflows</li>
+                      <li><strong>Visualization:</strong> Create interactive dashboards that drive decisions</li>
+                      <li><strong>ML & Predictive Modeling:</strong> Apply statistical methods to forecast outcomes</li>
+                  </ul>
+
+                  <h3>Education</h3>
+                  <ul>
+                      <li>Professional Certificate in Data Analytics & Machine Learning - UCD (2025)</li>
+                      <li>Postgraduate Certificate in Data Analytics - TripleTen (2025)</li>
+                      <li>BSc Mechanical Engineering - Universidade Federal do Parana (2016)</li>
+                  </ul>
+
+                  <h3>Languages</h3>
+                  <p>🇬🇧 English (Fluent) | 🇧🇷 Portuguese (Native) | 🇪🇸 Spanish (Fluent)</p>
+
+                  <p><a href="#" download>📄 Download CV</a></p>
+              </div>
+          </section>
+
+          <!-- EXPERIENCE -->
+          <section id="experience">
+              <h2 class="section-title">Experience</h2>
+              <div class="timeline">
+                  <div class="timeline-item">
+                      <h3>Data Analyst | Emagine (Uisce Éireann - Irish Water)</h3>
+                      <div class="timeline-date">Oct 2025 – Present | Dublin, Ireland</div>
+                      <ul>
+                          <li>Built data visualization platform in ServiceNow with 8 tabs, 80+ reports, and 30+ KPIs monitoring 10,000+ corporate mobility devices</li>
+                          <li>Automated stock review and misallocation reports using Excel, reducing generation time by 40%</li>
+                          <li>Performed monthly telecom provider reconciliation, generating €[XX,XXX]/month savings</li>
+                          <li>Maintained 99%+ data accuracy through continuous validation</li>
+                      </ul>
+                  </div>
+
+                  <div class="timeline-item">
+                      <h3>Data Insights Analyst | Trade na Mão</h3>
+                      <div class="timeline-date">Apr 2021 – Mar 2022 | Curitiba, Brazil</div>
+                      <ul>
+                          <li>Analyzed equities and derivatives using Python/Pandas, processing 500K+ daily data points</li>
+                          <li>Created automated dashboards tracking P&L and risk metrics</li>
+                          <li>Supported trading decisions, improving portfolio performance by 15%</li>
+                      </ul>
+                  </div>
+
+                  <div class="timeline-item">
+                      <h3>Commodity Buyer | Renault-Nissan-Mitsubishi</h3>
+                      <div class="timeline-date">Oct 2017 – Jul 2018 | São José dos Pinhais, Brazil</div>
+                      <ul>
+                          <li>Managed €15M procurement portfolio, using Excel for spend analysis and supplier KPIs</li>
+                          <li>Developed dashboards tracking costs, performance, and efficiency opportunities</li>
+                      </ul>
+                  </div>
+
+                  <div class="timeline-item">
+                      <h3>IT Analyst | ExxonMobil</h3>
+                      <div class="timeline-date">Jan 2016 – Dec 2016 | Curitiba, Brazil</div>
+                      <ul>
+                          <li>Monitored infrastructure data, created Tableau dashboards for KPI visualization</li>
+                          <li>Standardized reporting processes improving accessibility</li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+
+          <!-- PROJECTS -->
+          <section id="projects">
+              <h2 class="section-title">Featured Projects</h2>
+              <div class="projects-grid">
+                  <div class="project-card">
+                      <h3>📊 Data Warehouse & Analytics</h3>
+                      <p>Designed Medallion Architecture data warehouse in Databricks using PySpark. Built ETL pipelines processing 5M+ records daily.</p>
+                      <p class="project-tech">Tech: Databricks, PySpark, SQL Server</p>
+                      <a href="https://github.com/mateussibila/sql-data-warehouse-project" target="_blank">View on GitHub →</a>
+                  </div>
+
+                  <div class="project-card">
+                      <h3>🎯 Customer Churn Prediction</h3>
+                      <p>Built ML pipeline predicting telecom churn at ~80% accuracy using scikit-learn and TensorFlow.</p>
+                      <p class="project-tech">Tech: Python, scikit-learn, TensorFlow, Pandas</p>
+                      <a href="https://github.com/mateussibila/telco_churn" target="_blank">View on GitHub →</a>
+                  </div>
+
+                  <div class="project-card">
+                      <h3>📱 Streamlit Vehicle Analytics</h3>
+                      <p>Interactive web app for vehicle data exploration with dynamic filtering and visualizations.</p>
+                      <p class="project-tech">Tech: Python, Streamlit, Pandas, Matplotlib</p>
+                      <a href="https://github.com/mateussibila/Data-Analytics-Post-Graduation/tree/main/sprint-05-streamlit-webapp" target="_blank">View on GitHub →</a>
+                  </div>
+              </div>
+          </section>
+
+          <!-- BLOG -->
+          <section id="blog">
+              <h2 class="section-title">Blog</h2>
+              <div class="blog-placeholder">
+                  <i class="far fa-newspaper"></i>
+                  <h3>Blogcoming soon</h3>
+                  <p>My LinkedIn articles will be displayed here automatically.</p>
+              </div>
+          </section>
+
+          <!-- CONTACT -->
+          <section id="contact">
+              <h2 class="section-title">Get In Touch</h2>
+              <p>I'm currently open to Data Analyst and Data Engineer opportunities.</p>
+
+              <div class="contact-grid">
+                  <div class="contact-item">
+                      <i class="fas fa-envelope"></i>
+                      <p><a href="mailto:mateussibila@gmail.com">mateussibila@gmail.com</a></p>
+                  </div>
+                  <div class="contact-item">
+                      <i class="fab fa-linkedin"></i>
+                      <p><a href="https://linkedin.com/in/mateussibilaromano" target="_blank">LinkedIn</a></p>
+                  </div>
+                  <div class="contact-item">
+                      <i class="fab fa-github"></i>
+                      <p><a href="https://github.com/mateussibila" target="_blank">GitHub</a></p>
+                  </div>
+                  <div class="contact-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <p>📍 Dublin, Ireland</p>
+                  </div>
+              </div>
+          </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+          <div class="container">
+              <p>&copy; 2025 Mateus Sibila Romano. All rights reserved.</p>
+              <div style="margin-top: 1rem;">
+                  <a href="mailto:mateussibila@gmail.com" style="margin: 0 10px;"><i class="fas fa-envelope fa-lg"></i></a>
+                  <a href="https://linkedin.com/in/mateussibilaromano" target="_blank" style="margin: 0 10px;"><i class="fab fa-linkedin fa-lg"></i></a>
+                  <a href="https://github.com/mateussibila" target="_blank" style="margin: 0 10px;"><i class="fab fa-github fa-lg"></i></a>
+              </div>
+          </div>
+      </footer>
+
+      <!-- DARK MODE & NAV SCRIPT -->
+      <script>
+          // Dark mode toggle
+          const themeToggle = document.getElementById('themeToggle');
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          document.documentElement.setAttribute('data-theme', currentTheme);
+
+          themeToggle.addEventListener('click', () => {
+              const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+              document.documentElement.setAttribute('data-theme', theme);
+              localStorage.setItem('theme', theme);
+          });
+
+          // Active navigation link based on scroll position
+          const sections = document.querySelectorAll('section');
+          const navLinks = document.querySelectorAll('.nav-link');
+
+          function updateActiveLink() {
+              let current = '';
+              sections.forEach(section => {
+                  const sectionTop = section.offsetTop;
+                  const sectionHeight = section.clientHeight;
+                  if (window.pageYOffset >= sectionTop - 100) {
+                      current = section.getAttribute('id');
+                  }
+              });
+
+              navLinks.forEach(link => {
+                  link.classList.remove('active');
+                  if (link.getAttribute('href') === '#' + current) {
+                      link.classList.add('active');
+                  }
+              });
+          }
+
+          window.addEventListener('scroll', updateActiveLink);
+          updateActiveLink();
+      </script>
+  </body>
+  </html>

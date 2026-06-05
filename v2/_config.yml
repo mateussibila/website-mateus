@@ -1,0 +1,30 @@
+# Mateus Sibila — Portfolio Site
+
+title: Mateus Sibila
+author: Mateus Sibila
+email: mateussibila@gmail.com
+description: Data Analyst and Data Engineer building pipelines, analytics, and reliable insights.
+url: "https://mateussibila.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+future: true
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache
+  - referencias
+  - guia-github-pages.md
+  - proximos-passos-domain.md
+  - roadmap.md
+
+plugins: []

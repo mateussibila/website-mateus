@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Run Jekyll from v2/ (the active site). Do not run jekyll from the repo root.
+cd "$(dirname "$0")/v2" || exit 1
+exec bundle exec jekyll serve "$@"

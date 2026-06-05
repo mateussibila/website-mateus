@@ -1,0 +1,51 @@
+<nav id="navbar" class="{% if page.nav_mode == 'projects' %}nav-show-avatar{% endif %}">
+  <div class="nav-inner">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">
+      <img
+        src="{{ '/assets/img/profile.jpg' | relative_url }}"
+        alt=""
+        class="nav-avatar"
+        width="36"
+        height="36"
+      />
+      <span class="nav-logo">Mateus Sibila</span>
+    </a>
+    <ul class="nav-links">
+      {% if page.nav_mode == 'projects' %}
+        <li><a href="{{ '/' | relative_url }}#about">About</a></li>
+        <li><a href="{{ '/' | relative_url }}#skills">Skills</a></li>
+        <li><a href="{{ '/' | relative_url }}#experience">Experience</a></li>
+        <li><a href="{{ '/' | relative_url }}#education">Education</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}" class="nav-active">Projects</a></li>
+        <li><a href="{{ '/' | relative_url }}#contact" class="btn-nav">Contact</a></li>
+      {% else %}
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+        <li><a href="#contact" class="btn-nav">Contact</a></li>
+      {% endif %}
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    {% if page.nav_mode == 'projects' %}
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/' | relative_url }}#skills">Skills</a>
+      <a href="{{ '/' | relative_url }}#experience">Experience</a>
+      <a href="{{ '/' | relative_url }}#education">Education</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/' | relative_url }}#contact">Contact</a>
+    {% else %}
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="#contact">Contact</a>
+    {% endif %}
+  </div>
+</nav>

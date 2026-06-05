@@ -1,0 +1,41 @@
+---
+layout: portfolio
+browser_title: Projects — Mateus Sibila
+description: Portfolio of data analytics and data engineering projects by Mateus Sibila.
+nav_mode: projects
+body_class: page-projects
+permalink: /projects/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Portfolio Projects</h1>
+    <p>End-to-end analytics and data engineering work — from ETL and warehousing to machine learning and interactive dashboards. Each project includes repository links and technical detail.</p>
+  </div>
+</section>
+
+<section class="projects-list">
+  <div class="container">
+    {% for project in site.projects %}
+    <article class="project-detail-card">
+      <div class="project-detail-header">
+        <h2>{{ project.title }}</h2>
+      </div>
+      <p class="project-detail-desc">{{ project.description }}</p>
+      <div class="project-detail-body">
+        {{ project.content }}
+      </div>
+      <div class="tags">
+        {% for tech in project.tech %}
+        <span>{{ tech }}</span>
+        {% endfor %}
+      </div>
+      <div class="project-detail-footer">
+        {% if project.link %}
+        <a href="{{ project.link }}" target="_blank" rel="noopener" class="project-github-link">View on GitHub →</a>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Mateus Sibila (preview)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f1419;
+      --bg-alt: #151c26;
+      --bg-card: #1a2332;
+      --border: #2d3a4d;
+      --accent: #0a8fbd;
+      --accent2: #4a8ec9;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --green: #3fb950;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e8eaed;
+      color: #1a1a1a;
+      line-height: 1.6;
+      padding: 24px 16px 48px;
+    }
+
+    .doc-header {
+      max-width: 900px;
+      margin: 0 auto 32px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    }
+    .doc-header h1 { font-size: 1.5rem; margin-bottom: 8px; color: #1a1a1a; }
+    .doc-header p { color: #555; font-size: .95rem; margin-bottom: 8px; }
+    .doc-header .howto {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: #f4f6f8;
+      border-radius: 10px;
+      font-size: .88rem;
+      color: #444;
+    }
+    .doc-header .howto strong { color: var(--accent); }
+    .doc-header code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .8rem;
+      background: #e8ecf0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .site-frame {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,.25);
+      color: var(--text);
+    }
+
+    /* Nav mock */
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: rgba(15,20,25,.92);
+      border-bottom: 1px solid var(--border);
+      font-size: .8rem;
+    }
+    .mock-nav-brand { font-weight: 600; color: var(--text); }
+    .mock-nav-links { display: flex; gap: 20px; color: var(--text-muted); flex-wrap: wrap; }
+    .mock-nav-links .cta {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Sections */
+    .mock-section {
+      padding: 32px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .mock-section.alt { background: rgba(21,28,38,.72); }
+    .mock-section h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      display: inline-block;
+      min-width: 200px;
+    }
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .65rem;
+      color: var(--accent);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* Hero */
+    .mock-hero {
+      display: grid;
+      grid-template-columns: 1fr 140px;
+      gap: 24px;
+      align-items: center;
+      padding: 40px 24px;
+      background:
+        radial-gradient(ellipse 90% 60% at 10% -10%, rgba(10,143,189,.12), transparent 55%),
+        var(--bg);
+    }
+    .mock-hero h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .mock-hero h1 span { color: var(--accent); }
+    .mock-hero .sub { color: var(--text-muted); font-size: .85rem; margin-bottom: 10px; }
+    .mock-hero .desc { color: var(--text-muted); font-size: .78rem; line-height: 1.5; margin-bottom: 14px; }
+    .mock-hero-photo {
+      width: 120px;
+      height: 150px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+    .mock-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+    .mock-btns span {
+      font-size: .7rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .btn-p { background: var(--accent); color: #fff; }
+    .btn-o { border: 1px solid var(--border); color: var(--text); }
+    .mock-tags { font-size: .65rem; color: var(--text-muted); list-style: none; }
+    .mock-tags li { margin-bottom: 4px; padding-left: 10px; position: relative; }
+    .mock-tags li::before { content: ''; position: absolute; left: 0; top: 6px; width: 4px; height: 4px; background: var(--accent); border-radius: 1px; }
+
+    /* About grid */
+    .mock-about {
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 20px;
+      font-size: .72rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .mock-about-visual {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .65rem;
+      text-align: center;
+      padding: 10px;
+      color: var(--text-muted);
+    }
+
+    /* Skills */
+    .mock-skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .mock-skill {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      font-size: .65rem;
+    }
+    .mock-skill strong { display: block; color: var(--text); font-size: .7rem; margin-bottom: 6px; }
+    .mock-skill .tags { color: var(--text-muted); line-height: 1.4; }
+
+    /* Job */
+    .mock-job {
+      background: var(--bg-card);
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: .72rem;
+      margin-bottom: 10px;
+    }
+    .mock-job.purple { border-left-color: #6b5b95; }
+    .mock-job-header { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .mock-job-title { font-weight: 600; color: var(--text); }
+    .mock-job-org { color: var(--accent2); font-size: .68rem; }
+    .mock-logos { display: flex; gap: 6px; margin-top: 6px; }
+    .mock-logo {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--bg);
+      border: 1px solid var(--border); font-size: .55rem;
+      display: flex; align-items: center; justify-content: center; color: var(--accent);
+    }
+
+    /* Contact */
+    .mock-contact {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .mock-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px 8px;
+      text-align: center;
+      font-size: .6rem;
+    }
+    .mock-tile-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(10,143,189,.15);
+      margin: 0 auto 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem; color: var(--accent);
+    }
+
+    /* Meta section below frame */
+    .meta {
+      max-width: 900px;
+      margin: 32px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 700px) { .meta { grid-template-columns: 1fr; } }
+    .meta-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.05);
+    }
+    .meta-card h3 { font-size: .95rem; margin-bottom: 12px; color: #333; }
+    .palette { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .swatch {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    }
+    .meta-card ul { font-size: .85rem; color: #555; padding-left: 1.1rem; }
+    .meta-card li { margin-bottom: 4px; }
+    .meta-card a { color: var(--accent); }
+
+    @media print {
+      body { background: #fff; padding: 8px; }
+      .doc-header .howto { display: none; }
+      .site-frame { box-shadow: none; break-inside: avoid; }
+      .meta { break-before: page; }
+    }
+
+    @media (max-width: 600px) {
+      .mock-hero { grid-template-columns: 1fr; }
+      .mock-hero-photo { max-width: 100px; margin: 0 auto; }
+      .mock-about { grid-template-columns: 1fr; }
+      .mock-skills { grid-template-columns: 1fr 1fr; }
+      .mock-contact { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="doc-header">
+    <h1>Portfolio — Mateus Sibila (v2)</h1>
+    <p>Pré-visualização do site actual para revisão ou partilha. Este documento resume o design e a estrutura — o site completo corre em <strong>localhost:4000</strong> ou online após deploy.</p>
+    <div class="howto">
+      <strong>Como gerar PDF do site real (captura fiel):</strong><br />
+      1. <code>cd v2 && bundle exec jekyll serve</code><br />
+      2. Abrir <code>http://localhost:4000</code> no Chrome<br />
+      3. Fazer scroll por todas as secções · <strong>Imprimir → Guardar como PDF</strong> (marca “Gráficos de fundo” se quiseres o tema escuro)<br />
+      4. Repetir em <code>/projects/</code> se quiseres essa página também<br /><br />
+      <strong>PDF deste ficheiro:</strong> abrir este HTML → Imprimir → PDF (resumo visual, 2–3 páginas).
+    </div>
+  </header>
+
+  <div class="site-frame">
+    <nav class="mock-nav">
+      <span class="mock-nav-brand">Mateus Sibila</span>
+      <div class="mock-nav-links">
+        <span>About</span>
+        <span>Skills</span>
+        <span>Experience</span>
+        <span>Education</span>
+        <span>Projects</span>
+        <span class="cta">Contact</span>
+      </div>
+    </nav>
+
+    <section class="mock-hero">
+      <div>
+        <h1>Mateus <span>Sibila</span></h1>
+        <p class="sub">Data Analysis · Data Engineering</p>
+        <p class="desc">8+ years building data pipelines and analytics across operations, financial markets, and engineering.</p>
+        <div class="mock-btns">
+          <span class="btn-p">Get in Touch</span>
+          <span class="btn-o">View Experience</span>
+        </div>
+        <ul class="mock-tags">
+          <li>Python · SQL · Databricks</li>
+          <li>Based in Dublin · EU-citizen</li>
+        </ul>
+      </div>
+      <img class="mock-hero-photo" src="assets/img/profile.jpg" alt="Mateus Sibila" onerror="this.style.display='none'" />
+    </section>
+
+    <section class="mock-section">
+      <p class="section-tag">Home</p>
+      <h2>Professional Summary</h2>
+      <div class="mock-about">
+        <p>Data professional with engineering background and 8+ years in data-driven roles. End-to-end workflows — ingestion, ETL, validation, dashboards. Python, SQL, PySpark, Databricks.</p>
+        <div class="mock-about-visual">Skills visual<br />(placeholder)</div>
+      </div>
+    </section>
+
+    <section class="mock-section alt">
+      <h2>Core Competencies</h2>
+      <div class="mock-skills">
+        <div class="mock-skill"><strong>Data Engineering</strong><span class="tags">Python · SQL · PySpark · Databricks</span></div>
+        <div class="mock-skill"><strong>ML & Analytics</strong><span class="tags">Scikit-learn · TensorFlow · Statistics</span></div>
+        <div class="mock-skill"><strong>BI & Viz</strong><span class="tags">Power BI · Tableau · Streamlit</span></div>
+      </div>
+    </section>
+
+    <section class="mock-section">
+      <h2>Work Experience</h2>
+      <div class="mock-job">
+        <div class="mock-job-header">
+          <div>
+            <div class="mock-job-title">Data Analyst · Emagine / Irish Water</div>
+            <div class="mock-job-org">Dublin · Oct 2025 – Present</div>
+            <div class="mock-logos"><span class="mock-logo">E</span><span class="mock-logo">IW</span></div>
+          </div>
+        </div>
+        <span style="color:var(--text-muted)">10k+ assets · dashboards · KPIs</span>
+      </div>
+      <div class="mock-job purple">
+        <div class="mock-job-title">Professional Development & Portfolio</div>
+        <div class="mock-job-org">Mar 2022 – Sep 2025 · certs + projects</div>
+      </div>
+    </section>
+
+    <section class="mock-section alt">
+      <h2>Selected Work → /projects</h2>
+      <p style="font-size:.75rem;color:var(--text-muted)">5 portfolio projects with GitHub links (churn, warehouse, streamlit, telecom, videogame)</p>
+    </section>
+
+    <section class="mock-section">
+      <h2>Get In Touch</h2>
+      <div class="mock-contact">
+        <div class="mock-tile"><div class="mock-tile-icon">✉</div>Email</div>
+        <div class="mock-tile"><div class="mock-tile-icon">in</div>LinkedIn</div>
+        <div class="mock-tile"><div class="mock-tile-icon">GH</div>GitHub</div>
+        <div class="mock-tile"><div class="mock-tile-icon">◎</div>Dublin</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="meta">
+    <div class="meta-card">
+      <h3>Paleta de cores</h3>
+      <div class="palette">
+        <div class="swatch" style="background:#0f1419" title="Background"></div>
+        <div class="swatch" style="background:#0a8fbd" title="Accent"></div>
+        <div class="swatch" style="background:#4a8ec9" title="Accent 2"></div>
+        <div class="swatch" style="background:#1a2332" title="Cards"></div>
+        <div class="swatch" style="background:#e6edf3;border:1px solid #ccc" title="Text"></div>
+      </div>
+      <p style="font-size:.85rem;color:#666">Tema escuro · azul petróleo · tipografia Inter</p>
+    </div>
+    <div class="meta-card">
+      <h3>Estrutura (v2)</h3>
+      <ul>
+        <li><strong>/</strong> — página única (profile completo)</li>
+        <li><strong>/projects/</strong> — 5 projetos detalhados</li>
+        <li>Stack: Jekyll · HTML/CSS/JS</li>
+        <li>Deploy: GitHub Pages → <code>_site/</code></li>
+        <li>Pasta: <code>website-mateus/v2/</code></li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

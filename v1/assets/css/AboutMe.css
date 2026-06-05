@@ -1,0 +1,1125 @@
+/* Custom styles for About Me page - inspired by vks.ai/aboutme */
+
+.about-section {
+  margin-bottom: 3rem;
+  padding: 4rem 0 0 0; /* 4rem top padding to clear navbar */
+}
+
+.about-section h2 {
+  font-size: 1.75rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about-section h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.experience {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid #e0e0e0;
+}
+
+.experience ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+.experience li {
+  margin-bottom: 0.3rem;
+}
+
+.education-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.education-section li {
+  margin-bottom: 0.8rem;
+  padding-left: 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-category {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 3px solid #007bff;
+}
+
+.skill-category strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+/* Popular Posts (styled like vks.ai) */
+.popular-posts {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.popular-posts li {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid #ff4500;
+  transition: box-shadow 0.2s;
+}
+
+.popular-posts li:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.popular-posts a {
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.popular-posts a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.post-meta {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Portfolio / Projects */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.portfolio-item {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.portfolio-item:hover {
+  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0,123,255,0.1);
+}
+
+.portfolio-item h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-item h4 a {
+  color: #2c3e50;
+}
+
+.portfolio-item h4 a:hover {
+  color: #007bff;
+}
+
+.tech-tags .badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Social Links */
+.social-links-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.social-links-section h3 {
+  margin-top: 0;
+}
+
+.social-links-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-links-list li {
+  display: inline-block;
+}
+
+.social-links-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  color: #495057;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.social-links-list a:hover {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+  text-decoration: none;
+}
+
+/* Home page styles */
+.home-content .lead {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.cta-section {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: white;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-secondary:hover {
+  background: #e7f1ff;
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.featured-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.featured-section h2 {
+  margin-top: 0;
+}
+
+.featured-section .row {
+  margin-top: 1.5rem;
+}
+
+.featured-section h4 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+}
+
+/* Avatar fade-in animation (inspired by vks.ai) */
+.avatar-container {
+  animation: avatarFadeIn 1.2s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Force navbar to be flex and control layout */
+nav.navbar.navbar-custom {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+
+/* Position avatar as inline element with navbar items */
+nav.navbar.navbar-custom .avatar-container {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  top: auto !important;
+  width: 2.5rem !important;  /* 40px */
+  height: 2.5rem !important; /* 40px - match avatar-img-border */
+  margin-left: 1.5rem !important;
+  margin-right: 0.5rem !important;
+  flex-shrink: 0 !important;
+  align-self: center !important;
+  order: 2 !important;
+  z-index: 1;
+}
+
+/* Make avatar-img-border square and centered */
+nav.navbar.navbar-custom .avatar-container .avatar-img-border {
+  margin-left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure avatar image fills container */
+nav.navbar.navbar-custom .avatar-container .avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Vertically align avatar with nav buttons */
+nav.navbar.navbar-custom .navbar-nav .nav-link {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+  line-height: 1 !important;
+}
+
+nav.navbar.navbar-custom {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Ensure navbar collapse (menu items) comes first */
+nav.navbar.navbar-custom .navbar-collapse {
+  order: 1 !important;
+  margin-right: auto !important;
+}
+
+/* Override theme's absolute positioning at all breakpoints */
+@media (min-width: 1200px) {
+  nav.navbar.navbar-custom .avatar-container {
+    position: relative !important;
+    bottom: auto !important;
+    width: 2.5rem !important;
+  }
+}
+
+@keyframes avatarFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Optional: Add a subtle hover effect */
+.avatar-container:hover .avatar-img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* ===== PAGE CONTENT TOP MARGIN ===== */
+/* Add padding-top to all pages to clear fixed navbar */
+#main {
+  padding-top: 4rem !important; /* 64px - matches navbar height */
+}
+
+/* Additional padding for specific pages if needed */
+.page-content {
+  padding-top: 4rem !important;
+}
+
+/* ===== HERO SECTION LAYOUT ===== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.hero-avatar {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust featured section */
+.featured-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.featured-section h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Responsive: stack hero on smaller screens */
+@media (max-width: 1199px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-image {
+    width: 150px;
+    height: 150px;
+    order: -1; /* Image on top */
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+}
+
+/* Hide the header-section with page-heading */
+.header-section {
+  display: none !important;
+}
+
+/* Add top padding to home content to clear fixed navbar */
+.home-content {
+  padding-top: 5rem !important; /* Adjust based on navbar height */
+}
+
+/* ===== AVATAR VISIBILITY ON SCROLL (INVERTED) ===== */
+/* Default theme: top-nav-regular shows avatar, top-nav-short hides it */
+/* We want the opposite: hide on top, show on scroll */
+
+/* When at top (navbar has .top-nav-regular by default) - HIDE avatar */
+nav.navbar.navbar-custom.top-nav-regular .avatar-container {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* When scrolled (navbar gets .top-nav-short) - SHOW avatar */
+nav.navbar.navbar-custom.top-nav-short .avatar-container {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Also handle expanded state (mobile menu) - always hide */
+nav.navbar.navbar-custom.top-nav-expanded .avatar-container {
+  display: none !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 3rem 2rem;
+  background-color: #f8f9fa; /* Light gray background */
+  border-radius: 12px;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.hero-avatar {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FULL WIDTH LAYOUT ===== */
+/* Force all containers to be full width */
+.page-content .container,
+.page-content .container-md,
+.page-content .container-lg,
+.page-content .container-xl,
+.page-content .container-xxl,
+.page-content .row,
+.page-content [class*="col-"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  float: none !important;
+  display: block !important;
+  box-sizing: border-box;
+}
+
+/* Override Bootstrap's column width system completely */
+.row > [class*="col-"] {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Specifically target the problematic column classes with higher specificity */
+.page-content .row > .col-xl-8.offset-xl-2,
+.page-content .row > .col-lg-10.offset-lg-1,
+.page-content .row > .col-xl-8,
+.page-content .row > .col-lg-10 {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Remove offset margins completely */
+.col-xl-8.offset-xl-2,
+.col-lg-10.offset-lg-1 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Remove container padding for projects page */
+.page-content .container-md {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ===== PROJECTS PAGE - FULL WIDTH CARDS ===== */
+.projects-page {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 4rem 1rem 2rem 1rem;
+  width: 100% !important;
+}
+
+/* Projects Page - single column cards with image on right */
+.projects-page .project-card {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px !important;
+  background: #f8f9fa;
+  margin: 1rem 0 !important;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  width: 100%;
+}
+
+.projects-page .project-card:hover {
+  border-color: #0069d9;
+  box-shadow: 0 4px 12px rgba(0, 105, 153, 0.15);
+}
+
+.projects-page .project-content {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  order: 1;
+}
+
+.projects-page .project-content h3 {
+  margin: 0 0 1rem 0;
+  color: #0069d9;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.projects-page .project-content p {
+  margin: 0;
+  color: #212529;
+  line-height: 1.6;
+}
+
+.projects-page .project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.projects-page .tech-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.projects-page .tech-default {
+  background-color: #6c757d;
+  color: white;
+}
+
+.projects-page .github-link {
+  display: inline-block;
+  margin-top: auto;
+  color: #0069d9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-top: 0.5rem;
+}
+
+.projects-page .github-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.projects-page .project-image {
+  order: 2;
+  width: 25%;
+  min-width: 150px;
+  aspect-ratio: 16 / 9;
+  background: #f8f9fa;
+  border-left: 1px solid #dee2e6;
+  overflow: hidden;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.projects-page .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive for Projects Page */
+@media (max-width: 991px) {
+  .projects-page .project-card {
+    flex-direction: column;
+  }
+
+  .projects-page .project-image {
+    width: 100%;
+    min-height: 150px;
+    border-left: none;
+    border-top: 1px solid #dee2e6;
+  }
+}
+
+/* ===== HOME PAGE - GRID CARDS (ORIGINAL STYLE) ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.projects-grid .project-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-grid .project-card:hover {
+  border-color: #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+}
+
+.projects-grid .project-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.25rem;
+}
+
+.projects-grid .project-card p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.projects-grid .project-tech {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 600;
+  margin-bottom: 1rem !important;
+}
+
+.projects-grid .project-card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.projects-grid .project-card a:hover {
+  text-decoration: underline;
+}
+
+.project-content h3 {
+  margin: 0;
+  color: #0069d9;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.project-content p {
+  margin: 0;
+  color: #212529;
+  line-height: 1.6;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.tech-default {
+  background-color: #6c757d;
+  color: white;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: auto;
+  color: #0069d9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-top: 0.5rem;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.project-image {
+  width: 20%;
+  min-width: 150px;
+  max-width: 250px;
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 3rem;
+  border-left: 1px solid #dee2e6;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-image {
+    width: 100%;
+    min-height: 150px;
+    border-left: none;
+    border-top: 1px solid #dee2e6;
+  }
+}
+
+.section-title {
+  font-size: 1.75rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: left; /* Align to left */
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+  display: block;
+}
+
+/* Make projects grid use full width with 3 columns */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 equal columns */
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Ensure project cards don't shrink */
+.project-card {
+  min-width: 0; /* Prevents overflow */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* ===== RECENT POSTS SECTION ===== */
+.section-recent-posts {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.section-recent-posts .section-title {
+  border-top: none;
+  padding-top: 0;
+  text-align: left; /* Ensure left alignment */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .hero-image {
+    width: 150px;
+    height: 150px;
+    order: -1; /* Image on top */
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+
+/* ===== CONTACT PAGE STYLES ===== */
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 0 2rem 0; /* 4rem top padding to clear navbar */
+}
+
+.contact-section h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.75rem;
+}
+
+.contact-section > p {
+  margin-bottom: 2rem;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+  padding: 1rem;
+}
+
+.contact-item i {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: #0069d9;
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.contact-item a {
+  color: #495057;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: #0069d9;
+  text-decoration: underline;
+}
+
+/* Blog coming soon page */
+.blog-coming-soon {
+  text-align: center;
+  padding: 4rem 2rem; /* top padding already included */
+}
+
+.blog-coming-soon h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.blog-coming-soon p {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* ===== NAVBAR & FOOTER COLOR ===== */
+/* Change navbar color to a nice medium blue */
+nav.navbar.navbar-custom {
+  background-color: #0069d9 !important; /* Medium blue */
+  border-bottom-color: #0056b3 !important;
+}
+
+nav.navbar.navbar-custom .navbar-brand,
+nav.navbar.navbar-custom .navbar-nav .nav-link {
+  color: #fff !important; /* White text for contrast */
+}
+
+nav.navbar.navbar-custom .navbar-brand:hover,
+nav.navbar.navbar-custom .navbar-nav .nav-link:hover,
+nav.navbar.navbar-custom .navbar-nav .nav-link:focus {
+  color: #cce5ff !important; /* Light blue on hover */
+}
+
+/* Footer color */
+.site-footer {
+  background-color: #0069d9 !important; /* Same medium blue */
+  color: #fff !important;
+}
+
+.site-footer a {
+  color: #cce5ff !important;
+}
+
+.site-footer a:hover {
+  color: #fff !important;
+}
+
+/* ===== AVATAR IN NAVBAR ===== */
+/* Force navbar to be flex */
+nav.navbar.navbar-custom {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+
+/* Position avatar as inline element with navbar items */
+nav.navbar.navbar-custom .avatar-container {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  top: auto !important;
+  width: 2.5rem !important;  /* 40px */
+  height: 2.5rem !important; /* 40px */
+  margin-left: 1.5rem !important;
+  margin-right: 0.5rem !important;
+  flex-shrink: 0 !important;
+  align-self: center !important;
+  order: 2 !important;
+  z-index: 1;
+}
+
+/* Make avatar-img-border square and centered */
+nav.navbar.navbar-custom .avatar-container .avatar-img-border {
+  margin-left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure avatar image fills container */
+nav.navbar.navbar-custom .avatar-container .avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Order navbar items correctly */
+nav.navbar.navbar-custom .navbar-collapse {
+  order: 1 !important;
+}
+
+/* AVATAR VISIBILITY ON SCROLL (INVERTED) */
+/* At top (top-nav-regular) - HIDE avatar */
+nav.navbar.navbar-custom.top-nav-regular .avatar-container {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* When scrolled (top-nav-short) - SHOW avatar */
+nav.navbar.navbar-custom.top-nav-short .avatar-container {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Mobile expanded state - hide avatar */
+nav.navbar.navbar-custom.top-nav-expanded .avatar-container {
+  display: none !important;
+}
+
