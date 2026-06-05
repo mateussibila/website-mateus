@@ -38,7 +38,7 @@ Push para `main` dispara o workflow `.github/workflows/pages.yml` (build Jekyll 
 | Caminho | Uso |
 |---------|-----|
 | `assets/img/profile.jpg` | Foto hero + navbar |
-| `assets/img/skills-visual.jpg` | Professional Summary (adicionar quando pronta) |
+| `assets/img/skills-visual.png` | Professional Summary (tech stack visual) |
 | `assets/img/logos/` | Logos das empresas (Experience) |
 | `assets/img/icons/` | LinkedIn, GitHub, Ireland (contact) |
 | `assets/img/source-website/` | Cópia dos ficheiros originais (`Downloads/images for website`) |
